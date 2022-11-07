@@ -1,0 +1,24 @@
+{
+  "name": "url-shortening-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./src/styles/output.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./src/styles/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldreaaml/url-shortening-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ldreaaml/url-shortening-app/issues"
+  },
+  "homepage": "https://github.com/ldreaaml/url-shortening-app#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.2"
+  }
+}
