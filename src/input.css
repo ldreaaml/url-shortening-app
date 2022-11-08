@@ -82,3 +82,7 @@ body {
 .txtBoxWarning::placeholder {
   color: hsl(0, 87%, 67%);
 }
+
+.copiedBtn {
+  background-color: hsl(257, 27%, 26%);
+}
