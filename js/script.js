@@ -18,6 +18,12 @@ input.addEventListener("input", () => {
   input.classList.remove("txtBoxWarning");
 });
 
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(copyBtn.previousElementSibling.innerHTML);
+  copyBtn.innerText = "Copied!";
+  copyBtn.classList.add("copiedBtn");
+});
+
 form.addEventListener("submit", () => {
   if (input.value.match("^$")) {
     error.classList.remove("hidden");
@@ -26,31 +32,26 @@ form.addEventListener("submit", () => {
   } else {
     // make api call
     const url = input.value;
-    getShortenedLink(url)
-      .then((data) => {
+    getShortenedLink(url).then((data) => {
+      if (data) {
+        result.classList.remove("hidden");
+        copyBtn.classList.remove("copiedBtn");
+        copyBtn.innerText = "Copy";
+        result.classList.toggle("changeCard");
         document.getElementById("original-link").innerText = url;
         document.getElementById("short-link").innerText =
           data.result.short_link;
-      })
-      // invalid link provided or failed to fetch
-      .catch(() => {
+      } else {
         error.classList.remove("hidden");
         input.classList.add("txtBoxWarning");
         error.innerText = "Invalid URL. Please try again";
-      });
+      }
+    });
   }
-});
-
-//copy to clipboard
-copyBtn.addEventListener("click", () => {
-  navigator.clipboard.writeText(copyBtn.previousElementSibling.innerHTML);
-  copyBtn.innerText = "Copied!";
-  copyBtn.classList.add("copiedBtn");
 });
 
 async function getShortenedLink(link) {
   const url = "https://api.shrtco.de/v2/shorten?url=" + link;
-  console.log(url);
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -64,8 +65,6 @@ async function getShortenedLink(link) {
     }
 
     const result = await response.json();
-    console.log(result);
-
     return result;
   } catch (err) {
     console.log(err);
