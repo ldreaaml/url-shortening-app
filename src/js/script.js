@@ -3,9 +3,9 @@ const nav = document.getElementById("menu");
 const shortenBtn = document.getElementById("shorten-btn");
 const error = document.getElementById("error");
 const form = document.getElementById("form");
-const input = document.getElementById("txtBox");
+const input = document.getElementById("textbox");
 const result = document.getElementById("result");
-const copyBtn = document.getElementById("copyBtn");
+const copyBtn = document.getElementById("copy-btn");
 
 navBtn.addEventListener("click", () => {
   navBtn.classList.toggle("open");

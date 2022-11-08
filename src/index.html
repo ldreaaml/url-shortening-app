@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
@@ -14,6 +13,7 @@
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="relative container md:max-w-5xl mx-auto p-6">
         <div class="flex justify-between">
@@ -53,11 +53,10 @@
         </div>
     </div>
 
-
     <!-- Hero Banner -->
     <section id="hero">
         <div class="container flex md:max-w-5xl items-center mx-auto flex-col-reverse md:flex-row py-16">
-            <!-- Left -->
+            <!-- Left Text-->
             <div class="flex flex-col space-y-3 pt-3 mt-10 px-4 md:w-1/2 ">
                 <h1 class="max-w-sm text-VeryDarkViolet text-4xl font-bold text-center md:text-5xl md:text-left">
                     More than just shorter links
@@ -71,8 +70,7 @@
                         Started</button>
                 </div>
             </div>
-
-            <!-- img -->
+            <!-- Banner Image -->
             <div class="md:w-1/2">
                 <img src="images/illustration-working.svg" alt="">
             </div>
@@ -80,18 +78,17 @@
     </section>
 
     <!-- Feature -->
-    <section id="features">
+    <section id="features" class="rounded-lg">
         <!-- Container for form and features -->
         <div class="mx-auto md:h-[60rem] bg-LightViolet mt-12">
-
             <!-- Input Form -->
             <div class="container md:max-w-5xl px-4 mx-auto mt-20 text-center -translate-y-14">
                 <form onsubmit="return false;" id="form">
                     <div
-                        class="flex flex-col space-y-10 p-10 rounded-lg bg-DarkViolet md:flex-row md:space-y-0 md:space-x-3 ">
-                        <input id="txtBox" type="text" class="flex-1 p-2 rounded-lg focus:outline-none"
+                        class="flex flex-col space-y-9 p-10 rounded-lg bg-DarkViolet md:flex-row md:space-y-0 md:space-x-3 ">
+                        <input id="textbox" type="text" class="flex-1 p-2 rounded-lg focus:outline-none"
                             placeholder="Shorten a link here...">
-                        <!-- error mesesage -->
+                        <!-- Error mesesage -->
                         <span id="error" class="hidden text-left text-Red absolute pt-2 md:pt-12"></span>
                         <button id="shorten-btn"
                             class="bg-Cyan text-white rounded-lg font-bold p-2 px-5 hover:opacity-40">Shorten
@@ -99,20 +96,19 @@
                     </div>
                 </form>
 
-                <!-- output link -->
+                <!-- Result URL -->
                 <div id="result"
-                    class="hidden flex flex-col my-3 px-3 space-y-1 text-left rounded-lg md:flex-row md:bg-white md:justify-between md:items-center">
+                    class="hidden flex flex-col my-3  space-y-1 text-left rounded-lg md:flex-row md:bg-white md:justify-between md:items-center">
                     <div class="md:max-w-sm rounded-t-lg bg-white p-4">
                         <p id="original-link" class="text-DarkViolet text-lg truncate"></p>
                     </div>
                     <div
                         class="  rounded-b-lg flex flex-col p-4 bg-white space-y-3 md:flex-row md:items-center md:space-y-0 md:space-x-6">
                         <p id="short-link" class="text-Cyan text-lg truncate"></p>
-                        <button id="copyBtn"
+                        <button id="copy-btn"
                             class="bg-Cyan text-white rounded-lg font-bold p-2 px-5 hover:opacity-40 md:flex-1">Copy</button>
                     </div>
                 </div>
-
             </div>
 
             <!-- Brand Stats -->
@@ -130,7 +126,6 @@
 
                 <!-- Cards Container -->
                 <div class="flex flex-col space-y-24 md:flex-row md:space-x-4 md:space-y-0">
-
                     <!-- Card 1 -->
                     <div class="flex flex-col text-center bg-white rounded-md">
                         <div
@@ -256,7 +251,6 @@
                 </svg>
             </div>
         </div>
-
     </footer>
 
     <script src="js/script.js"></script>
