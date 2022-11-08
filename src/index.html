@@ -89,7 +89,7 @@
                 <form onsubmit="return false;" id="form">
                     <div
                         class="flex flex-col space-y-10 p-10 rounded-lg bg-DarkViolet md:flex-row md:space-y-0 md:space-x-3 ">
-                        <input id="txtBox" type="text" class="txtBoxWarning flex-1 p-2 rounded-lg focus:outline-none"
+                        <input id="txtBox" type="text" class="flex-1 p-2 rounded-lg focus:outline-none"
                             placeholder="Shorten a link here...">
                         <!-- error mesesage -->
                         <span id="error" class="hidden text-left text-Red absolute pt-2 md:pt-12"></span>
@@ -101,14 +101,13 @@
 
                 <!-- output link -->
                 <div id="result"
-                    class="flex flex-col my-3 px-3 space-y-1 text-left rounded-lg md:flex-row md:bg-white md:justify-between md:items-center">
-
-                    <div class="rounded-t-lg bg-white p-4 ">
-                        <p id="original-link" class="text-DarkViolet text-lg">https://www.testlink123.io</p>
+                    class="hidden flex flex-col my-3 px-3 space-y-1 text-left rounded-lg md:flex-row md:bg-white md:justify-between md:items-center">
+                    <div class="md:max-w-sm rounded-t-lg bg-white p-4">
+                        <p id="original-link" class="text-DarkViolet text-lg truncate"></p>
                     </div>
                     <div
-                        class="rounded-b-lg flex flex-col p-4 bg-white space-y-3 md:flex-row md:items-center md:space-y-0 md:space-x-6">
-                        <p id="short-link" class="text-Cyan text-lg">https://www.shortened.io</p>
+                        class="  rounded-b-lg flex flex-col p-4 bg-white space-y-3 md:flex-row md:items-center md:space-y-0 md:space-x-6">
+                        <p id="short-link" class="text-Cyan text-lg truncate"></p>
                         <button id="copyBtn"
                             class="bg-Cyan text-white rounded-lg font-bold p-2 px-5 hover:opacity-40 md:flex-1">Copy</button>
                     </div>

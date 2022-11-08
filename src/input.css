@@ -86,3 +86,21 @@ body {
 .copiedBtn {
   background-color: hsl(257, 27%, 26%);
 }
+
+@keyframes swap {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.changeCard {
+  animation-name: swap;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in, ease-out;
+}

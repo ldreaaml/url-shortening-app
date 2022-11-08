@@ -786,6 +786,12 @@ video {
   align-self: stretch;
 }
 
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .rounded-full{
   border-radius: 9999px;
 }
@@ -1132,6 +1138,25 @@ body {
   background-color: hsl(257, 27%, 26%);
 }
 
+@keyframes swap {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.changeCard {
+  animation-name: swap;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in, ease-out;
+}
+
 .hover\:fill-Cyan:hover{
   fill: hsl(180, 66%, 49%);
 }
@@ -1184,6 +1209,14 @@ body {
 
   .md\:max-w-5xl{
     max-width: 64rem;
+  }
+
+  .md\:max-w-sm{
+    max-width: 24rem;
+  }
+
+  .md\:max-w-md{
+    max-width: 28rem;
   }
 
   .md\:flex-1{
