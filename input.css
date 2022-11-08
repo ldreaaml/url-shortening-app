@@ -73,3 +73,12 @@ body {
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
+
+.txtBoxWarning {
+  outline-style: solid;
+  outline-color: hsl(0, 87%, 67%);
+}
+
+.txtBoxWarning::placeholder {
+  color: hsl(0, 87%, 67%);
+}
