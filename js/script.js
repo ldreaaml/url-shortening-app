@@ -22,20 +22,30 @@ form.addEventListener("submit", () => {
   if (input.value.match("^$")) {
     error.classList.remove("hidden");
     input.classList.add("txtBoxWarning");
+    error.innerText = "Please add a link";
   } else {
     // make api call
     const url = input.value;
-    console.log(">" + url);
-    getShortenedLink(url).then((data) => {
-      document.getElementById("original-link").innerText = url;
-      document.getElementById("short-link").innerText = data.result.short_link;
-    });
+    getShortenedLink(url)
+      .then((data) => {
+        document.getElementById("original-link").innerText = url;
+        document.getElementById("short-link").innerText =
+          data.result.short_link;
+      })
+      // invalid link provided or failed to fetch
+      .catch(() => {
+        error.classList.remove("hidden");
+        input.classList.add("txtBoxWarning");
+        error.innerText = "Invalid URL. Please try again";
+      });
   }
 });
 
 //copy to clipboard
 copyBtn.addEventListener("click", () => {
   navigator.clipboard.writeText(copyBtn.previousElementSibling.innerHTML);
+  copyBtn.innerText = "Copied!";
+  copyBtn.classList.add("copiedBtn");
 });
 
 async function getShortenedLink(link) {

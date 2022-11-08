@@ -798,10 +798,6 @@ video {
   border-radius: 0.375rem;
 }
 
-.rounded-xl{
-  border-radius: 0.75rem;
-}
-
 .rounded-t-lg{
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -1130,6 +1126,10 @@ body {
 
 .txtBoxWarning::placeholder {
   color: hsl(0, 87%, 67%);
+}
+
+.copiedBtn {
+  background-color: hsl(257, 27%, 26%);
 }
 
 .hover\:fill-Cyan:hover{
